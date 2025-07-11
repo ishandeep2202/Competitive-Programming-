@@ -1,4 +1,7 @@
 /*
+https://cses.fi/problemset/result/13116748/
+Multiplication Table
+
 Aim is to find the middle element of this (n * n) where n is odd.
 
 Since array is sorted - Binary search 
