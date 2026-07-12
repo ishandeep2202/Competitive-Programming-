@@ -1,0 +1,62 @@
+========== EMPTY TRIE TEST ==========
+search("apple")      : false
+startsWith("app")   : false
+
+========== INSERT TEST ==========
+Inserted:
+apple app bat ball banana cat dog
+
+========== SEARCH TEST ==========
+search("apple")   : true
+search("app")     : true
+search("bat")     : true
+search("banana")  : true
+
+Words that should NOT exist
+search("ap")       : false
+search("apply")    : false
+search("balls")    : false
+search("cats")     : false
+
+========== PREFIX TEST ==========
+startsWith("a")      : true
+startsWith("ap")     : true
+startsWith("app")    : true
+startsWith("appl")   : true
+startsWith("b")      : true
+startsWith("ba")     : true
+startsWith("ban")    : true
+startsWith("cat")    : true
+startsWith("do")     : true
+
+Prefixes that should NOT exist
+startsWith("z")      : false
+startsWith("cae")    : false
+startsWith("baz")    : false
+
+========== COUNT TEST ==========
+countWordsEqualTo("apple") = 3
+countWordsEqualTo("app") = 2
+countWordsStartingWith("app") = 5
+countWordsStartingWith("ba") = 3
+
+========== ERASE TEST ==========
+After erasing one apple
+search("apple") : true
+search("app") : true
+startsWith("app") : true
+
+========== STRESS TEST ==========
+       abc -> true
+      abcd -> true
+     abcde -> true
+    abcdef -> true
+       xyz -> true
+        xy -> true
+         x -> true
+     hello -> true
+      hell -> true
+    heaven -> true
+     heavy -> true
+
+========== TEST COMPLETE ==========
