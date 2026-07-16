@@ -27,7 +27,7 @@ void LazySegTree::build(int ind, int low, int high) {
 
 int LazySegTree::query(int ind, int low, int high, int left, int right) {
     if (lazy[ind] != 0) {
-        sgt[ind] += (high - low + 1) * lazy[ind];
+        sgt[ind] += (high - low + 1) * lazy[ind]; // to get min add lazy[ind] for complete overlap
         if (low != high) {
             lazy[2*ind+1] += lazy[ind];
             lazy[2*ind+2] += lazy[ind];
@@ -43,7 +43,7 @@ int LazySegTree::query(int ind, int low, int high, int left, int right) {
     int mid = (low + high) / 2;
     int l_ans = query(2*ind+1, low, mid, left, right);
     int r_ans = query(2*ind+2, mid+1, high, left, right);
-    return l_ans + r_ans;
+    return l_ans + r_ans; // min(l_ans, r_ans)
 }
 
 void LazySegTree::update(int ind, int low, int high, int left, int right, int val) {
